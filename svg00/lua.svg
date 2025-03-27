@@ -1,0 +1,15 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        
+        <circle cx="100" cy="100" r="85" fill="white" stroke="gray"
+        stroke-width="5" stroke-dasharray="6,8"></circle>
+        <circle cx="100" cy="100" r="60"
+         fill="#000080"></circle>
+        <circle cx="170" cy="50" r="20"
+        fill="#000080"></circle>
+        <circle cx="120" cy="85" r="20"
+        fill="white"></circle>
+        <text x="65" y="130" font-size="40"
+        fill="white">Lua</text>
+
+
+    </svg>
