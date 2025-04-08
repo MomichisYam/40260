@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 02</title>
+</head>
+
+
+<body>
+    <style>
+        td, th{
+            padding: 10px;
+        }
+
+    </style>
+
+    <button onclick="loadXMLDoc()">Ejecutar función</button>
+
+    <table id="demo"></table>
+
+    <script>
+        function loadXMLDoc() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                const xmlDoc = xhttp.responseXML;
+                const al = xmlDoc.getElementsByTagName("alumno");
+                myFunction(al);
+            }
+            xhttp.open("GET", "alumnos.xml");
+            xhttp.send();
+        }
+
+        function myFunction(al) {
+            let table = "<tr><th>Nombre</th><th>Nacimiento</th></tr>";
+            for (let i = 0; i < al.length; i++) {
+                table += "<tr><td>" +
+                    al[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    al[i].getElementsByTagName("nacimiento")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+            }
+            document.getElementById("demo").innerHTML = table;
+        }
+    </script>
+
+</body>
+
+</html>
